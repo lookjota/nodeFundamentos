@@ -25,6 +25,8 @@ import http from 'node:http'
 
 // Stateful - Stateless
 
+// http Status code
+
 const server = http.createServer((req, res) => {
   const { method, url } = req
 
@@ -41,10 +43,10 @@ const server = http.createServer((req, res) => {
       email: 'johndoe@example.com',
     })
 
-    return res.end('Criacao de usuario')
+    return res.writeHead(201).end()
   }
 
-  return res.end('Hello Worlds')
+  return res.writeHead(404).end()
 })
 
 server.listen(3333)
