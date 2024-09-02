@@ -11,6 +11,9 @@ export const routes = [
     path: buildRoutePath('/users'),
     // funcao que vai executar a operacao da rota
     handler: (req, res) => {
+
+      console.log(req.query)
+
       const users = database.select('users')
     
       return res.end(JSON.stringify(users))
